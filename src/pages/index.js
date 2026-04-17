@@ -331,6 +331,7 @@ export default function Home() {
                   spaceBetween={20}
                   slidesPerView={3}
                   slidesPerGroup={1}
+                  autoplay={{ delay: 2500, disableOnInteraction: false }}
                   loop={true}
                   navigation={{
                     prevEl: ".prevArrow",
