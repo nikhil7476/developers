@@ -25,7 +25,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 import { RxLightningBolt } from "react-icons/rx";
 import { GoGear, GoRocket } from "react-icons/go";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 
 const techs = [
   "Laravel",
@@ -327,11 +327,11 @@ export default function Home() {
                   </button>
                 </div>
                 <Swiper
-                  modules={[Navigation]}
+                  modules={[Navigation, Autoplay]}
                   spaceBetween={20}
                   slidesPerView={3}
                   slidesPerGroup={1}
-                  autoplay={{ delay: 2500, disableOnInteraction: false }}
+                  autoplay={{ delay: 2000, disableOnInteraction: false }}
                   loop={true}
                   navigation={{
                     prevEl: ".prevArrow",
