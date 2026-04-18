@@ -333,7 +333,7 @@
   border: 1px solid var(--accent);
 }
 
-.hire .technologySection .prev,
+/* .hire .technologySection .prev,
 .hire .technologySection .next {
   color: var(--heading);
   background-color: var(--bg-primary);
@@ -345,7 +345,7 @@
 .hire .technologySection .next:hover {
   border-color: var(--button-bg-secondary-border-hover);
   color: var(--accent);
-}
+} */
 
 .hire .advantages .advantageCard {
   padding: 40px;

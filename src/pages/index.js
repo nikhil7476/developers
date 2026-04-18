@@ -15,8 +15,6 @@ import {
   FaLandmark,
   FaStar,
   FaSquare,
-  FaChevronLeft,
-  FaChevronRight,
 } from "react-icons/fa";
 import { FiUsers, FiRefreshCw } from "react-icons/fi";
 import { IoShieldCheckmarkOutline } from "react-icons/io5";
@@ -24,8 +22,6 @@ import { LuBrain, LuServer, LuBuilding2 } from "react-icons/lu";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { RxLightningBolt } from "react-icons/rx";
 import { GoGear, GoRocket } from "react-icons/go";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
 
 const techs = [
   "Laravel",
@@ -40,6 +36,45 @@ const techs = [
   "PostgreSQL",
   "MongoDB",
   "TensorFlow",
+];
+
+const items = [
+  {
+    title: "Node.js",
+    desc: "High-performance server-side applications, real-time systems, and scalable APIs. Node.js powers modern startups and enterprise backends with JavaScript everywhere.",
+    tags: ["Express", "NestJS", "Real-time", "REST/GraphQL", "Microservices"],
+  },
+  {
+    title: "Shopify",
+    desc: "Custom Shopify themes, app development, and store optimization. Build powerful e-commerce experiences with headless commerce and Liquid templating.",
+    tags: [
+      "Liquid",
+      "Shopify Plus",
+      "Headless",
+      "Custom Apps",
+      "Storefront API",
+    ],
+  },
+  {
+    title: "WordPress",
+    desc: "Custom themes, plugin development, and enterprise WordPress solutions. WooCommerce setups, headless WordPress with REST API, and high-traffic sites.",
+    tags: ["WooCommerce", "Custom Themes", "Plugins", "Headless", "Gutenberg"],
+  },
+  {
+    title: "Laravel",
+    desc: "Build robust web applications, RESTful APIs, and custom backend systems. Laravel's elegant syntax powers e-commerce platforms, SaaS products, and enterprise apps.",
+    tags: ["PHP", "REST APIs", "E-commerce", "SaaS", "Admin Panels"],
+  },
+  {
+    title: "Python",
+    desc: "From Django and Flask backends to ML pipelines and automation scripts. Python powers analytics dashboards, AI-driven platforms, and scalable web services.",
+    tags: ["Django", "Flask", "AI/ML", "Automation", "Data Science"],
+  },
+  {
+    title: "ASP.NET",
+    desc: "Enterprise-grade applications with Microsoft's robust framework. Perfect for large-scale systems, secure APIs, and cloud-native solutions on Azure.",
+    tags: ["C#", "Azure", "Enterprise", "Microservices", "APIs"],
+  },
 ];
 
 const faqs = [
@@ -70,51 +105,6 @@ const faqs = [
 ];
 
 export default function Home() {
-  const items = [
-    {
-      title: "Node.js",
-      desc: "High-performance server-side applications, real-time systems, and scalable APIs. Node.js powers modern startups and enterprise backends with JavaScript everywhere.",
-      tags: ["Express", "NestJS", "Real-time", "REST/GraphQL", "Microservices"],
-    },
-    {
-      title: "Shopify",
-      desc: "Custom Shopify themes, app development, and store optimization. Build powerful e-commerce experiences with headless commerce and Liquid templating.",
-      tags: [
-        "Liquid",
-        "Shopify Plus",
-        "Headless",
-        "Custom Apps",
-        "Storefront API",
-      ],
-    },
-    {
-      title: "WordPress",
-      desc: "Custom themes, plugin development, and enterprise WordPress solutions. WooCommerce setups, headless WordPress with REST API, and high-traffic sites.",
-      tags: [
-        "WooCommerce",
-        "Custom Themes",
-        "Plugins",
-        "Headless",
-        "Gutenberg",
-      ],
-    },
-    {
-      title: "Laravel",
-      desc: "Build robust web applications, RESTful APIs, and custom backend systems. Laravel's elegant syntax powers e-commerce platforms, SaaS products, and enterprise apps.",
-      tags: ["PHP", "REST APIs", "E-commerce", "SaaS", "Admin Panels"],
-    },
-    {
-      title: "Python",
-      desc: "From Django and Flask backends to ML pipelines and automation scripts. Python powers analytics dashboards, AI-driven platforms, and scalable web services.",
-      tags: ["Django", "Flask", "AI/ML", "Automation", "Data Science"],
-    },
-    {
-      title: "ASP.NET",
-      desc: "Enterprise-grade applications with Microsoft's robust framework. Perfect for large-scale systems, secure APIs, and cloud-native solutions on Azure.",
-      tags: ["C#", "Azure", "Enterprise", "Microservices", "APIs"],
-    },
-  ];
-
   return (
     <>
       <Head>
@@ -202,7 +192,7 @@ export default function Home() {
               <Col xl={7} lg={7} md={6} sm={12} xs={12} className="mb-4">
                 <Card className={`${styles.serviceCard1} h-100`}>
                   <FaCode className={styles.cardIcon} />
-                  <h3>Dedicated Website Developers</h3>
+                  <h3>Dedicated Web Developers</h3>
                   <p>
                     Build scalable web applications, custom portals, and
                     enterprise platforms with Laravel, Python, ASP.NET, and
@@ -280,7 +270,7 @@ export default function Home() {
               <Col xl={7} lg={7} md={6} sm={12} xs={12} className="mb-4">
                 <Card className={`${styles.serviceCard4} h-100`}>
                   <LuServer className={styles.cardIcon} />
-                  <h3>Dedicated DevOps Developers</h3>
+                  <h3>Dedicated DevOps Engineers</h3>
                   <p>
                     CI/CD pipelines, cloud infrastructure, containerization, and
                     monitoring for seamless deployments.
@@ -307,7 +297,7 @@ export default function Home() {
           </Container>
         </section>
 
-        {/* Technology Slider Section */}
+        {/* Technology Section */}
         <section className={styles.technologySection}>
           <Container>
             <Row>
@@ -317,55 +307,27 @@ export default function Home() {
               </Col>
             </Row>
             <Row>
-              <Col>
-                <div className="d-flex gap-2 justify-content-end mb-3">
-                  <button className={`${styles.prev} prevArrow`}>
-                    <FaChevronLeft />
-                  </button>
-                  <button className={`${styles.next} nextArrow`}>
-                    <FaChevronRight />
-                  </button>
-                </div>
-                <Swiper
-                  modules={[Navigation, Autoplay]}
-                  spaceBetween={20}
-                  slidesPerView={3}
-                  slidesPerGroup={1}
-                  autoplay={{ delay: 2000, disableOnInteraction: false }}
-                  loop={true}
-                  navigation={{
-                    prevEl: ".prevArrow",
-                    nextEl: ".nextArrow",
-                  }}
-                  breakpoints={{
-                    0: { slidesPerView: 1 },
-                    768: { slidesPerView: 2 },
-                    1200: { slidesPerView: 3 },
-                  }}
-                  style={{ alignItems: "stretch" }}
+              {items.map((item, i) => (
+                <Col
+                  xl={4}
+                  lg={4}
+                  md={6}
+                  sm={12}
+                  xs={12}
+                  key={i}
+                  className="mb-4"
                 >
-                  {items.map((item, i) => (
-                    <SwiperSlide
-                      key={i}
-                      style={{ height: "auto", display: "flex" }}
-                    >
-                      <Card
-                        className={`${styles.technologyCard} h-100 d-flex flex-column`}
-                      >
-                        <h3>{item.title}</h3>
-
-                        <p className="flex-grow-1">{item.desc}</p>
-
-                        <div className={styles.technologyTags}>
-                          {item.tags.map((tag, t) => (
-                            <span key={t}>{tag}</span>
-                          ))}
-                        </div>
-                      </Card>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              </Col>
+                  <Card className={`${styles.technologyCard} h-100`}>
+                    <h3>{item.title}</h3>
+                    <p>{item.desc}</p>
+                    <div className={styles.technologyTags}>
+                      {item.tags.map((tag, t) => (
+                        <span key={t}>{tag}</span>
+                      ))}
+                    </div>
+                  </Card>
+                </Col>
+              ))}
             </Row>
           </Container>
         </section>
