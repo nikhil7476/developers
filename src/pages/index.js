@@ -15,6 +15,10 @@ import {
   FaLandmark,
   FaStar,
   FaSquare,
+  FaRegCalendarAlt,
+  FaWhatsapp,
+  FaMailBulk,
+  FaPhoneAlt,
 } from "react-icons/fa";
 import { FiUsers, FiRefreshCw } from "react-icons/fi";
 import { IoShieldCheckmarkOutline } from "react-icons/io5";
@@ -796,6 +800,44 @@ export default function Home() {
             </Row>
           </Container>
         </section>
+
+        {/* Sticky Toolbar */}
+        <div className={styles.stickyToolbarWrapper}>
+          <a
+            href="https://calendly.com/us-nextupgrad/30min"
+            target="_blank"
+            title="Free Consultation"
+            className={styles.toolBtn}
+          >
+            <span>Book A Free Consultation</span>
+            <FaRegCalendarAlt />
+          </a>
+          <a
+            href="tel:+1(315)230-0102"
+            title="Call Now"
+            className={styles.toolBtn}
+          >
+            <span>Call Us Now</span>
+            <FaPhoneAlt />
+          </a>
+          <a
+            href="https://wa.me/8881050300/"
+            target="_blank"
+            title="WhatsApp Now"
+            className={styles.toolBtn}
+          >
+            <span>Chat On WhatsApp</span>
+            <FaWhatsapp />
+          </a>
+          <a
+            href="mailto:hello@nextupgrad.us"
+            title="Mail Us"
+            className={styles.toolBtn}
+          >
+            <span>Mail Us Now</span>
+            <FaMailBulk />
+          </a>
+        </div>
       </div>
     </>
   );
