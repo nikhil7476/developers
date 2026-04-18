@@ -210,7 +210,7 @@ export default function Home() {
                     </strong>{" "}
                     Faster delivery, clean architecture, SEO-optimized code
                   </span>
-                  <Link href="/contact" title="Hire Now">
+                  <Link href="#contact" title="Hire Now">
                     Hire Now <MdOutlineArrowOutward />
                   </Link>
                 </Card>
@@ -235,7 +235,7 @@ export default function Home() {
                     </strong>{" "}
                     Cross-platform efficiency, pixel-perfect UI, fast iteration
                   </span>
-                  <Link href="/contact" title="Hire Now">
+                  <Link href="#contact" title="Hire Now">
                     Hire Now <MdOutlineArrowOutward />
                   </Link>
                 </Card>
@@ -262,7 +262,7 @@ export default function Home() {
                     Custom models, rapid prototyping, production-grade ML
                     pipelines
                   </span>
-                  <Link href="/contact" title="Hire Now">
+                  <Link href="#contact" title="Hire Now">
                     Hire Now <MdOutlineArrowOutward />
                   </Link>
                 </Card>
@@ -288,7 +288,7 @@ export default function Home() {
                     </strong>{" "}
                     99.9% uptime, faster releases, cost-optimized infrastructure
                   </span>
-                  <Link href="/contact" title="Hire Now">
+                  <Link href="#contact" title="Hire Now">
                     Hire Now <MdOutlineArrowOutward />
                   </Link>
                 </Card>
